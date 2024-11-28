@@ -1,6 +1,6 @@
-from firejson.environment_utils import validate_firestore_environment, initialize_firestore_client
-from firejson.json_validation_utils import load_json_file, validate_json
-from firejson.logging_utils import log_error, log_success, set_logger
+from environment_utils import validate_firestore_environment, initialize_firestore_client
+from json_validation_utils import load_json_file, validate_json
+from logging_utils import log_error, log_success, set_logger
 
 def populate_firestore(file_path, collection_name=None, logger=None):
    

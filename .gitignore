@@ -1,8 +1,9 @@
 __pycache__/
 *.pyc 
 *.log
-*.env
+*.venv
 dist/
-bild/
+build/
 *egg-info/
 venv/
+*.in

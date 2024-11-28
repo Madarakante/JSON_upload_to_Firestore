@@ -1,6 +1,6 @@
 import os
 import json
-from firejson.logging_utils import log_success, log_error
+from logging_utils import log_success, log_error
 
 
 def validate_file_path(file_path, logger=None):

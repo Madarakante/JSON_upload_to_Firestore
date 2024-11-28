@@ -10,9 +10,9 @@ A Python library for validating JSON files and populating them into Google Fires
 Installation
 
 Install the library using pip:
-
+``` bash
 pip install firejson
-
+```
 
 ---
 
@@ -37,16 +37,16 @@ Below is an example of how to use the library:
 1. Prepare Your Service Account Key
 
 Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to point to your Firestore service account key:
-
+```
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/service_account_key.json"
-
+```
 Alternatively, you can set it in your script:
-
+```
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path/to/service_account_key.json"
-
+```
 2. Sample Code
-
+``` python
 from firejson.core import populate_firestore
 from firejson.logging_utils import set_logger
 
@@ -64,11 +64,11 @@ try:
     populate_firestore(file_path, collection_name, logger)
 except ValueError as e:
     print(f"Error: {e}")
-
+```
 3. Example JSON Data
 
 Dictionary Format
-
+``` json
 {
   "users": [
     {
@@ -83,9 +83,9 @@ Dictionary Format
     }
   ]
 }
-
+```
 List Format
-
+``` json
 [
   {
     "id": "doc1",
@@ -98,22 +98,22 @@ List Format
     "field2": "value4"
   }
 ]
-
+```
 4. Output
 
 If successful, the following logs will be generated:
-
+``` 
 INFO - Starting Firestore population process...
 INFO - JSON structure validated successfully!
 INFO - Firestore keys validated successfully!
 INFO - Document 'user1' written to collection 'users'.
 INFO - Document 'user2' written to collection 'users'.
 INFO - Firestore population completed: 2 documents written successfully, 0 failed.
-
+```
 If there's an error, such as an invalid JSON format:
-
+```
 Error: Invalid JSON format in file 'path/to/example_data.json': [error details]
-
+```
 
 ---
 
